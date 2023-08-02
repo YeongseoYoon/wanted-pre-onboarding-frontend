@@ -1,11 +1,7 @@
 
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import ErrorBoundary from '../pages/error/ErrorBoundary';
-import Home from '../pages/home/Home';
-import SignUp from '../pages/sign-up/SignUp';
-import SignIn from '../pages/sign-in/SignIn';
-import ToDo from '../pages/todo/ToDo';
+import {Home, SignIn, SignUp,ToDo, ErrorBoundary} from "../pages";
 
 const router = createBrowserRouter([
   {
