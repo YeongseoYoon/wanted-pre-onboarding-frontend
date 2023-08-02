@@ -2,7 +2,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import {Home, SignIn, SignUp,ToDo, ErrorBoundary} from "../pages";
-
 const router = createBrowserRouter([
   {
     path: "/",
