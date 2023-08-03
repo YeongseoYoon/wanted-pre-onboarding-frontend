@@ -41,7 +41,11 @@ const useAxios = <T>(): UseAxiosResult<T> => {
         error: null,
       });
     } catch (error: AxiosError | any) {
-      setState((prev) => ({ ...prev, loading: false, error }));
+      setState((prev) => ({
+        ...prev,
+        loading: false,
+        error: error.response?.data?.message,
+      }));
     }
   };
 
