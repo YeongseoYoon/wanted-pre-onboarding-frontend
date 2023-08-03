@@ -9,7 +9,9 @@ export const useAuth = () => {
   useEffect(() => {
     if (
       token &&
-      (location.pathname === "/signin" || location.pathname === "/signup")
+      (location.pathname === "/" ||
+        location.pathname === "/signin" ||
+        location.pathname === "/signup")
     ) {
       navigate("/todo");
     } else if (!token && location.pathname === "/todo") {
