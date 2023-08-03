@@ -13,9 +13,12 @@ export const useSignUp = () => {
     } else if (error) {
       alert(error);
     }
-  }, [response?.data]);
+  }, [response, error, navigate]);
   const handleSignup = async ({ email, password }: User) => {
     try {
+      if (!email || !password) {
+        alert("입력되지 않은 항목이 있습니다.");
+      }
       request("post", "auth/signup", { email, password });
     } catch (error) {
       alert(error);
