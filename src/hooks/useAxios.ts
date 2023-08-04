@@ -4,20 +4,20 @@ import { instance } from "../apis/api";
 
 type MethodType = "get" | "post" | "put" | "delete";
 
-interface UseAxiosState {
+interface UseAxiosState<R> {
   loading: boolean;
   error?: any;
-  data?: any;
-  response?: any;
+  data?: R;
+  response?: AxiosResponse<R>;
 }
 
-type UseAxiosResult<T> = [
+type UseAxiosResult<T, R> = [
   (method: MethodType, url: string, data?: T) => void,
-  UseAxiosState
+  UseAxiosState<R>
 ];
 
-const useAxios = <T>(): UseAxiosResult<T> => {
-  const [state, setState] = useState<UseAxiosState>({
+const useAxios = <T, R>(): UseAxiosResult<T, R> => {
+  const [state, setState] = useState<UseAxiosState<R>>({
     loading: false,
     data: undefined,
     error: undefined,
@@ -28,7 +28,7 @@ const useAxios = <T>(): UseAxiosResult<T> => {
     setState((prev) => ({ ...prev, loading: true }));
 
     try {
-      const response: AxiosResponse<T> = await instance.request({
+      const response: AxiosResponse<R> = await instance.request({
         method: method,
         url: url,
         data: data,

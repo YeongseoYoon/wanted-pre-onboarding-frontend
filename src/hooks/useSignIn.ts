@@ -1,11 +1,14 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useAxios from "./useAxios";
-import { User } from "../types/auth";
+import { SignInRequest, SignInResponse } from "../types/auth";
 
 export const useSignIn = () => {
   const navigate = useNavigate();
-  const [request, { response, error }] = useAxios<User>();
+  const [request, { response, error }] = useAxios<
+    SignInRequest,
+    SignInResponse
+  >();
   useEffect(() => {
     if (response?.status === 200) {
       alert("로그인 되었습니다.");
@@ -16,7 +19,7 @@ export const useSignIn = () => {
     }
   }, [response, error, navigate]);
 
-  const handleSignIn = async ({ email, password }: User) => {
+  const handleSignIn = async ({ email, password }: SignInRequest) => {
     try {
       if (!email || !password) {
         alert("입력되지 않은 항목이 있습니다.");

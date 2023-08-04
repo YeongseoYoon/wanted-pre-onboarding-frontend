@@ -39,7 +39,9 @@ function SignUp() {
           onChange={(e) => setEmail(e.target.value)}
           value={email}
           className={`p-2 rounded ${
-            isEmailError ? "border border-red-500 border-solid" : ""
+            isEmailError
+              ? "border border-red-500 border-solid"
+              : "border border-gray-400 border-solid"
           }`}
         />
         <label htmlFor="password">비밀번호</label>
@@ -52,7 +54,9 @@ function SignUp() {
           onChange={(e) => setPassword(e.target.value)}
           value={password}
           className={`p-2 rounded ${
-            isPasswordError ? "border border-red-500 border-solid" : ""
+            isPasswordError
+              ? "border border-red-500 border-solid"
+              : "border border-gray-400 border-solid"
           }`}
         />
         <button
