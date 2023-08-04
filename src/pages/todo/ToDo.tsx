@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import useCreateToDo from "../../hooks/useCreateToDo";
 import useGetToDo from "../../hooks/useGetToDo";
 import useInput from "../../hooks/useInput";
+import useDeleteToDo from "../../hooks/useDeleteToDo";
 
 function ToDo() {
   const { value: todo, setValue: setTodo } = useInput({
@@ -10,6 +11,7 @@ function ToDo() {
   });
   const handleCreateToDo = useCreateToDo();
   const { handleGetToDo, todos } = useGetToDo();
+  const { handleDeleteToDo } = useDeleteToDo();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -40,11 +42,29 @@ function ToDo() {
       </form>
       <ul>
         {todos?.map((todo) => (
-          <li key={`${todo.id}-${todo.todo}`}>
+          <li
+            key={`${todo.id}-${todo.todo}`}
+            className="flex flex-row items-center justify-start my-1"
+          >
             <label>
               <input type="checkbox" checked={todo.isCompleted} />
               <span>{todo.todo}</span>
             </label>
+            <div className="flex gap-1 ml-2">
+              <button
+                data-testid="modify-button"
+                className="p-1 text-white rounded-md bg-zinc-500 hover:bg-zinc-300 active:bg-blue-600"
+              >
+                수정
+              </button>
+              <button
+                data-testid="delete-button"
+                onClick={() => handleDeleteToDo(todo.id, todo.todo)}
+                className="p-1 text-white rounded-md bg-zinc-500 hover:bg-zinc-300 active:bg-blue-600"
+              >
+                삭제
+              </button>
+            </div>
           </li>
         ))}
       </ul>
