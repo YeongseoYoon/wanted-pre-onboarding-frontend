@@ -1,4 +1,6 @@
-import useCreateToDo from "../../hooks/useCreateTodo";
+import { useEffect } from "react";
+import useCreateToDo from "../../hooks/useCreateToDo";
+import useGetToDo from "../../hooks/useGetToDo";
 import useInput from "../../hooks/useInput";
 
 function ToDo() {
@@ -7,11 +9,13 @@ function ToDo() {
     initialValue: "",
   });
   const handleCreateToDo = useCreateToDo();
+  const { handleGetToDo, todos } = useGetToDo();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     handleCreateToDo({ todo });
   };
+
   return (
     <>
       <h1 className="text-xl font-bold">Add ToDos!</h1>
@@ -34,26 +38,16 @@ function ToDo() {
           추가
         </button>
       </form>
-      {/*
       <ul>
-        {todos.map((todo, index) => (
-          <li key={index}>
+        {todos?.map((todo) => (
+          <li key={`${todo.id}-${todo.todo}`}>
             <label>
-              <input
-                type="checkbox"
-                checked={todo.completed}
-                onChange={() => {
-                  const updatedTodos = [...todos];
-                  updatedTodos[index].completed =
-                    !updatedTodos[index].completed;
-                  setTodos(updatedTodos);
-                }}
-              />
-              <span>{todo.text}</span>
+              <input type="checkbox" checked={todo.isCompleted} />
+              <span>{todo.todo}</span>
             </label>
           </li>
         ))}
-      </ul>*/}
+      </ul>
     </>
   );
 }

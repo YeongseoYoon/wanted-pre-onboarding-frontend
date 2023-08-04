@@ -12,3 +12,5 @@ export interface ToDoResponse {
 export interface CreateToDoRequest extends ToDoRequest {}
 
 export interface CreateToDoResponse extends ToDoResponse {}
+
+export interface GetToDoResponse extends ToDoResponse {}

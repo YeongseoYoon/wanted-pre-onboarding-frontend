@@ -7,6 +7,7 @@ export const useCreateToDo = () => {
     CreateToDoRequest,
     CreateToDoResponse
   >();
+
   useEffect(() => {
     if (error) {
       alert(error);
@@ -14,7 +15,7 @@ export const useCreateToDo = () => {
   }, [error]);
   const handleCreateToDo = async ({ todo }: CreateToDoRequest) => {
     try {
-      request("post", `todos`, { todo });
+      request("post", "todos", { todo });
     } catch (error) {
       alert(error);
     }
