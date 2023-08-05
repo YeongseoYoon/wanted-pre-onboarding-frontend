@@ -32,11 +32,3 @@ npm run start
 
 - Website: https://github.com/YeongseoYoon
 - Github: [@Eagerbeaver](https://github.com/YeongseoYoon)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
----
-
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
