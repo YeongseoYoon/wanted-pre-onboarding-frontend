@@ -24,6 +24,7 @@ function ToDo() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     handleCreateToDo({ todo });
+    setTodo("");
   };
 
   useEffect(() => {
