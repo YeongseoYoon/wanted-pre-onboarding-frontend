@@ -1,7 +1,7 @@
 import useAxios from "./useAxios";
 
 export const useDeleteToDo = () => {
-  const [request, { response, error }] = useAxios<null, null>();
+  const [request, { loading, error }] = useAxios<null, null>();
 
   const handleDeleteToDo = async (id: number) => {
     const confirm = window.confirm("삭제하시겠어요?");
@@ -15,7 +15,7 @@ export const useDeleteToDo = () => {
       }
     }
   };
-  return { handleDeleteToDo };
+  return { handleDeleteToDo, isDeleted: !error && !loading };
 };
 
 export default useDeleteToDo;

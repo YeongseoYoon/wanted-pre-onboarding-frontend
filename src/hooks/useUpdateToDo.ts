@@ -2,7 +2,7 @@ import { UpdateToDoRequest, UpdateToDoResponse } from "../types/todo";
 import useAxios from "./useAxios";
 
 export const useUpdateToDo = () => {
-  const [request, { response, error }] = useAxios<
+  const [request, { loading, error }] = useAxios<
     UpdateToDoRequest,
     UpdateToDoResponse
   >();
@@ -23,7 +23,7 @@ export const useUpdateToDo = () => {
       }
     }
   };
-  return { handleUpdateToDo };
+  return { handleUpdateToDo, isUpdated: !error && !loading };
 };
 
 export default useUpdateToDo;

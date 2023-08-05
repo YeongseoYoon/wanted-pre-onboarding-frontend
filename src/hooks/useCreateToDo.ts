@@ -3,7 +3,7 @@ import { CreateToDoRequest, CreateToDoResponse } from "../types/todo";
 import useAxios from "./useAxios";
 
 export const useCreateToDo = () => {
-  const [request, { error }] = useAxios<
+  const [request, { loading, error }] = useAxios<
     CreateToDoRequest,
     CreateToDoResponse
   >();
@@ -20,7 +20,7 @@ export const useCreateToDo = () => {
       alert(error);
     }
   };
-  return handleCreateToDo;
+  return { handleCreateToDo, isCreated: !error && !loading };
 };
 
 export default useCreateToDo;

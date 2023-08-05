@@ -13,16 +13,20 @@ function ToDo() {
     regex: /^.{8,}$/,
     initialValue: "",
   });
-  const { handleCreateToDo } = useCreateToDo();
   const { handleGetToDo, todos } = useGetToDo();
-  const { handleDeleteToDo } = useDeleteToDo();
-  const { handleUpdateToDo } = useUpdateToDo();
-  const { handleCheckbox } = useCheckbox();
+  const { handleCreateToDo, isCreated } = useCreateToDo();
+  const { handleDeleteToDo, isDeleted } = useDeleteToDo();
+  const { handleUpdateToDo, isUpdated } = useUpdateToDo();
+  const { handleCheckbox, isChecked } = useCheckbox();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     handleCreateToDo({ todo });
   };
+
+  useEffect(() => {
+    handleGetToDo();
+  }, [isCreated, isDeleted, isUpdated, isChecked]);
 
   return (
     <>
