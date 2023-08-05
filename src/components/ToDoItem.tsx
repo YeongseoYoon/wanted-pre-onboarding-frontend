@@ -9,11 +9,17 @@ interface ToDoItemProps {
     todo: string,
     isCompleted: boolean
   ) => Promise<void>;
+  handleCheckbox: (
+    id: number,
+    todo: string,
+    isCompleted: boolean
+  ) => Promise<void>;
 }
 const ToDoItem = ({
   todo,
   handleDeleteToDo,
   handleUpdateToDo,
+  handleCheckbox,
 }: ToDoItemProps) => {
   const [isEditing, setIsEditing] = useState(false);
   const [updatedTodo, setUpdatedTodo] = useState(todo.todo);
@@ -32,15 +38,25 @@ const ToDoItem = ({
     setIsEditing(false);
   };
 
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked } = event.target;
+    handleCheckbox(todo.id, todo.todo, checked);
+  };
+
   return (
     <li className="flex flex-row items-center justify-start my-1">
       {isEditing ? (
         <div>
-          <input type="checkbox" checked={todo.isCompleted} className="mr-1" />
+          <input
+            type="checkbox"
+            checked={todo.isCompleted}
+            className="mr-1"
+            onChange={handleCheckboxChange}
+          />
           <input
             data-testid="modify-input"
             value={updatedTodo}
-            onChange={(e) => setUpdatedTodo(e.target.value)}
+            onChange={(event) => setUpdatedTodo(event.target.value)}
             className="p-2 mr-2 border border-gray-400 border-solid rounded"
           />
           <button
@@ -65,8 +81,13 @@ const ToDoItem = ({
               type="checkbox"
               checked={todo.isCompleted}
               className="mr-1"
+              onChange={handleCheckboxChange}
             />
-            <span>{todo.todo}</span>
+            <span
+              className={todo.isCompleted ? "line-through text-gray-300" : ""}
+            >
+              {todo.todo}
+            </span>
           </label>
           <div className="flex gap-1 ml-2">
             <button
