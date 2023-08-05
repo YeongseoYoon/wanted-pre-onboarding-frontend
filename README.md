@@ -9,7 +9,7 @@
 
 > 윤영서
 
-### ✨ [Demo](https://wanted-pre-onboarding-frontend-bice.vercel.app/)
+### ✨ [배포 페이지](https://wanted-pre-onboarding-frontend-bice.vercel.app/)
 
 ### 실행방법
 
