@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 
-import useCreateToDo from "../../hooks/useCreateToDo";
-import useGetToDo from "../../hooks/useGetToDo";
-import useInput from "../../hooks/useInput";
-import useDeleteToDo from "../../hooks/useDeleteToDo";
-import useUpdateToDo from "../../hooks/useUpdateToDo";
 import ToDoItem from "../../components/ToDoItem";
-import useCheckbox from "../../hooks/useCheckbox";
+import {
+  useInput,
+  useGetToDo,
+  useCreateToDo,
+  useDeleteToDo,
+  useUpdateToDo,
+  useCheckbox,
+} from "../../hooks";
 
 function ToDo() {
   const { value: todo, setValue: setTodo } = useInput({

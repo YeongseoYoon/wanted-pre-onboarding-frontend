@@ -1,4 +1,4 @@
-import useAxios from "./useAxios";
+import useAxios from "../useAxios";
 
 export const useDeleteToDo = () => {
   const [request, { loading, error }] = useAxios<null, null>();

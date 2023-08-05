@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import useAxios from "./useAxios";
-import { SignUpRequest } from "../types/auth";
+import useAxios from "../useAxios";
+import { SignUpRequest } from "../../types/auth";
 import { useEffect } from "react";
 
 export const useSignUp = () => {

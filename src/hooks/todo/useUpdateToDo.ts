@@ -1,5 +1,5 @@
-import { UpdateToDoRequest, UpdateToDoResponse } from "../types/todo";
-import useAxios from "./useAxios";
+import { UpdateToDoRequest, UpdateToDoResponse } from "../../types/todo";
+import useAxios from "../useAxios";
 
 export const useUpdateToDo = () => {
   const [request, { loading, error }] = useAxios<

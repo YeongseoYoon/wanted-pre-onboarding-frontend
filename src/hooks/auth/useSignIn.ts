@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import useAxios from "./useAxios";
-import { SignInRequest, SignInResponse } from "../types/auth";
+import useAxios from "../useAxios";
+import { SignInRequest, SignInResponse } from "../../types/auth";
 
 export const useSignIn = () => {
   const navigate = useNavigate();

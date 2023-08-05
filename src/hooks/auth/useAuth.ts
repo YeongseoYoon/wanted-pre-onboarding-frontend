@@ -7,12 +7,7 @@ export const useAuth = () => {
   const token = localStorage.getItem("access_token");
 
   useEffect(() => {
-    if (
-      token &&
-      (location.pathname === "/" ||
-        location.pathname === "/signin" ||
-        location.pathname === "/signup")
-    ) {
+    if (token && ["/", "/signin", "/signup"].includes(location.pathname)) {
       navigate("/todo");
     } else if (!token && location.pathname === "/todo") {
       navigate("/signin");

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { UpdateToDoRequest, UpdateToDoResponse } from "../types/todo";
-import useAxios from "./useAxios";
+import { UpdateToDoRequest, UpdateToDoResponse } from "../../types/todo";
+import useAxios from "../useAxios";
 
 export const useCheckbox = () => {
   const [request, { loading, error }] = useAxios<

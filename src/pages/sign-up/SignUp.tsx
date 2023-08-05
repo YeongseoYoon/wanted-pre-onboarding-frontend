@@ -1,5 +1,4 @@
-import useInput from "../../hooks/useInput";
-import useSignUp from "../../hooks/useSignUp";
+import { useInput, useSignUp } from "../../hooks";
 
 function SignUp() {
   const {
