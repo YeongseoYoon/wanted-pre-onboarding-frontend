@@ -7,7 +7,6 @@ type MethodType = "get" | "post" | "put" | "delete";
 interface UseAxiosState<R> {
   loading: boolean;
   error?: any;
-  data?: R;
   response?: AxiosResponse<R>;
 }
 
@@ -19,7 +18,6 @@ type UseAxiosResult<T, R> = [
 const useAxios = <T, R>(): UseAxiosResult<T, R> => {
   const [state, setState] = useState<UseAxiosState<R>>({
     loading: false,
-    data: undefined,
     error: undefined,
     response: undefined,
   });
@@ -35,7 +33,6 @@ const useAxios = <T, R>(): UseAxiosResult<T, R> => {
       });
 
       setState({
-        data: response.data,
         loading: false,
         response,
         error: null,
