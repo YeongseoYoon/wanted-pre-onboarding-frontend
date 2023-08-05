@@ -59,7 +59,7 @@ function ToDo() {
               </button>
               <button
                 data-testid="delete-button"
-                onClick={() => handleDeleteToDo(todo.id, todo.todo)}
+                onClick={() => handleDeleteToDo(todo.id)}
                 className="p-1 text-white rounded-md bg-zinc-500 hover:bg-zinc-300 active:bg-blue-600"
               >
                 삭제
