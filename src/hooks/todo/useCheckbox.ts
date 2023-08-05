@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { UpdateToDoRequest, UpdateToDoResponse } from "../../types/todo";
 import useAxios from "../useAxios";
 

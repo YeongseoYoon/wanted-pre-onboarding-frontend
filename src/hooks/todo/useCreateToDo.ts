@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { CreateToDoRequest, CreateToDoResponse } from "../types/todo";
-import useAxios from "./useAxios";
+import { CreateToDoRequest, CreateToDoResponse } from "../../types/todo";
+import useAxios from "../useAxios";
 
 export const useCreateToDo = () => {
   const [request, { loading, error }] = useAxios<

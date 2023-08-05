@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { GetToDoResponse } from "../types/todo";
-import useAxios from "./useAxios";
+import { GetToDoResponse } from "../../types/todo";
+import useAxios from "../useAxios";
 
 export const useGetToDo = () => {
   const [request, { response, error }] = useAxios<null, GetToDoResponse[]>();
