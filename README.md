@@ -178,7 +178,7 @@ export default useAxios;
 
 - Header 컴포넌트에 useAuth 커스텀 훅을 사용해 인증토록 했습니다.
 - useLocation 과 useNavigate 를 통해, 현재 accessToken이 있고 현재 location이 “/”, “/signup”, “/signin”이면 “/todo”로 리다이렉트, accessToken이 없고 location이 “/todo”라면 “/signin”으로 리다이렉트 했습니다.
-- useAuth 훅을 사용시에 인증 확인 후 리다이렉트 시 깜빡임 문제가 있어 <Navigate/> 컴포넌트를 반환해(HOC) 깜빡임을 제거하는 **리팩토링**을 실행했습니다.
+- useAuth 훅을 사용시에 인증 확인 후 리다이렉트 시 깜빡임 문제가 있어 `<Navigate/>` 컴포넌트를 반환해(HOC) 깜빡임을 제거하는 **리팩토링**을 실행했습니다.
 
 ```ts
 //수정 전의 useAuth 훅
