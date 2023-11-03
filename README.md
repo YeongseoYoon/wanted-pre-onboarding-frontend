@@ -1,23 +1,31 @@
 # Todo List
 
-## 프로젝트 소개
+## ❤️ 프로젝트 내용
 
 - 로그인 및 회원가입 기능을 포함하여 사용자가 개인적으로 접근할 수 있는 투두리스트를 생성할 수 있는 사이트
 
-## 데모 영상
+## 🌱 배포 및 제작 기간
 
-[배포 링크(현재 원티드에서 제공하는 서버가 중단되어 api 요청 불가)](https://wanted-pre-onboarding-frontend-bice.vercel.app/)
+- 배포 링크 : [Todo List(현재 원티드에서 제공하는 서버가 중단되어 api 요청 불가)](https://wanted-pre-onboarding-frontend-bice.vercel.app/)
+- 제작 기간 : 2023.08.22 ~ 2023.08.23 (2일)
 
 ## 개발 환경
 
-### Developement
+### Development
 
-<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white"/>
-<img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=Axios&logoColor=white"/>
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white"/> <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=Axios&logoColor=white"/>
 
 ### Styling
 
 <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+
+## 🚀 실행 방법
+
+```
+$ git clone https://github.com/YeongseoYoon/wanted-pre-onboarding-frontend.git
+$ npm install
+$ npm start
+```
 
 ## 디렉토리 구조
 
